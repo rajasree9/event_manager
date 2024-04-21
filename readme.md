@@ -58,5 +58,18 @@
                the datatype of url is blocking the update so we change the datatype so that the update user id works correctly  
                use command git add .
                and commit the changes and then push the changes to git hub
-               we get a pull request merge the pull request issue is solved        
-                           
+               we get a pull request merge the pull request issue is solved
+  7. Issue4 : https://github.com/rajasree9/event_manager/commit/fa0c13f725ebb7c4ad2ae9a673388c6ac223fc85
+              if user already exists it gives bad request
+               existing_email = await UserService.get_by_username(db, user.email)
+              if existing_email:
+               raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email ID already exists")
+ 8. Issue5 : https://github.com/rajasree9/event_manager/commit/96b21834baed72673f157c715a2b0314d3cdcafc
+             made changes to role
+             role: Mapped[UserRole] = Column(SQLAlchemyEnum(UserRole), default=UserRole.USER, nullable=False)
+
+# Docker 
+https://hub.docker.com/repository/docker/rajasree961527/homework10/general
+
+From this assignment, I gained valuable insights into both technical skills and collaborative processes. On the technical side, I honed my ability to work with Python and FastAPI to manage user data, including validating usernames and passwords, handling user roles, and managing user records such as creating, updating, and retrieving user information. By working with data models and incorporating Pydantic for data validation, I learned how to efficiently and effectively handle data integrity while ensuring a secure and consistent user experience. Additionally, implementing role-based access control and ensuring proper validation of user input reinforced best practices in security and application design. I faced various challenges, such as ensuring consistent validation rules for usernames and passwords and handling different user roles in a seamless manner.This iterative process taught me the importance of careful planning and attention to detail in application development. Overall, this assignment reinforced the importance of both technical expertise and collaboration in software development projects.
+ 
